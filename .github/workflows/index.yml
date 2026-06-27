@@ -1,4 +1,4 @@
-name: Deploy HTML App
+name: Deploy Page
 
 on:
   pull_request:
@@ -11,11 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: production-files
-          path: ./src/termo-voluntario-CEJR-2026
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
