@@ -1,0 +1,6 @@
+node_modules/
+nginx/
+.github
+.gitignore
+docker-compose.prod.yml
+Dockerfile.prod

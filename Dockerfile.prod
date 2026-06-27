@@ -1,0 +1,21 @@
+# FROM node:24-alpine AS build
+
+# EXPOSE 3040
+
+# WORKDIR /usr/src/medcorporate-app
+
+# COPY . ./
+
+# RUN npm install
+
+# RUN npm run build
+
+FROM nginx:alpine AS prod
+
+EXPOSE 80
+
+COPY ./nginx/default.conf /etc/nginx/conf.d
+
+WORKDIR /usr/share/nginx/html
+
+COPY ./src/termo-voluntario-CEJR-2026/* ./

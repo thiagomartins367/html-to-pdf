@@ -1,0 +1,24 @@
+services:
+  html_to_pdf:
+    container_name: html_to_pdf
+    image: html_to_pdf_app
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+      target: prod
+    working_dir: /usr/share/nginx/html
+    restart: always
+    ports:
+      - 3030:80
+    volumes:
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+    # env_file:
+    #   - ./.env.production.local
+    networks:
+      - html_to_pdf_app
+
+networks:
+  html_to_pdf_app:
+    name: html_to_pdf_app
+    external: false

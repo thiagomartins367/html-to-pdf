@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documento Preenchível</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="toolbar no-print">
+    <h1>Documento Preenchível</h1>
+    <div class="actions">
+      <label class="btn">
+        Carregar PDF ou DOCX
+        <input type="file" id="file-input" accept=".pdf,.docx" hidden />
+      </label>
+      <button id="print-btn" class="btn" disabled>Imprimir</button>
+    </div>
+    <p class="hint">
+      Dica: marque campos no documento original com <code>___</code> (3+ sublinhados)
+      ou <code>{{nome}}</code> para virarem campos preenchíveis automaticamente.
+    </p>
+  </header>
+
+  <main id="document" class="document">
+    <p class="placeholder">Nenhum documento carregado. Selecione um PDF ou DOCX acima.</p>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.0.379/pdf.min.mjs" type="module"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
