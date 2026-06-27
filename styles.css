@@ -1,0 +1,426 @@
+/* === Base === */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #e5e5e5;
+  font-family: "Roboto", "Segoe UI", Arial, sans-serif;
+  font-size: 11pt;
+  color: #000;
+  line-height: 1.35;
+}
+
+/* === Toolbar (não imprime) === */
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.btn:hover { filter: brightness(1.1); }
+.btn-secondary { background: #6b7280; }
+
+.form-error {
+  color: #b91c1c;
+  font-size: 0.9rem;
+  align-self: center;
+  margin-left: 0.5rem;
+}
+
+.fill.invalid,
+select.fill.invalid {
+  background: #fee2e2 !important;
+  border-bottom: 1.5px solid #b91c1c !important;
+}
+
+.fill.invalid:focus {
+  background: #fecaca !important;
+}
+
+/* === Página A4 === */
+.page {
+  width: 21cm;
+  min-height: 29.7cm;
+  margin: 1rem auto;
+  padding: 2cm 2.2cm;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+/* === Cabeçalho === */
+.doc-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.logo-box {
+  width: 110px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.title-block {
+  flex: 1;
+  text-align: center;
+}
+
+.title-block h1 {
+  font-size: 20pt;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.subtitle {
+  font-size: 9pt;
+  font-weight: bold;
+  margin: 0.3rem 0;
+}
+
+.motto {
+  font-size: 11pt;
+  margin: 0.3rem 0 0 0;
+}
+
+.header-rule {
+  border: none;
+  border-top: 1.5px solid #000;
+  margin: 0.5rem 0 1.2rem 0;
+}
+
+/* === Box das leis === */
+.law-box {
+  border: 1px solid #000;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.law-box p {
+  margin: 0;
+  font-size: 10.5pt;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.title-block p {
+  text-align: center;
+}
+
+/* === Quadro Resumo === */
+.resume-box {
+  border: 1px solid #000;
+  padding: 0.6rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.box-title {
+  text-align: center;
+  font-size: 11pt;
+  font-weight: bold;
+  margin: 0 0 0.7rem 0;
+}
+
+.resume-box h3 {
+  font-size: 10.5pt;
+  font-weight: bold;
+  margin: 0.5rem 0 0.3rem 0;
+}
+
+.resume-box .italic { font-style: italic; margin: 0 0 0.5rem 0; }
+
+.fields-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fields-table td {
+  padding: 4px 0;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.fields-table td + td {
+  padding-left: 1.2rem;
+}
+
+.fields-table label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 10.5pt;
+}
+
+/* === Títulos de seção === */
+.section-title {
+  text-align: center;
+  font-size: 11pt;
+  font-weight: bold;
+  margin: 1rem 0 0.6rem 0;
+}
+
+.section-title-left {
+  font-size: 11pt;
+  font-weight: bold;
+  margin: 0.8rem 0 0.4rem 0;
+}
+
+/* === Parágrafos === */
+.page p {
+  margin: 0.4rem 0;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  word-spacing: normal;
+}
+
+.page .law-box p,
+.page .title-block p {
+  text-align: center;
+}
+
+/* === Campos preenchíveis (amarelos como no PDF original) === */
+.fill {
+  background: #fff48a;
+  border: none;
+  border-bottom: 1px solid #000;
+  font: inherit;
+  font-weight: normal;
+  padding: 1px 4px;
+  color: #000;
+  outline: none;
+  flex: 1;
+  min-width: 0;
+}
+
+.fill:focus {
+  background: #ffe94d;
+  box-shadow: inset 0 -2px 0 #2563eb;
+}
+
+.fill-area {
+  width: 100%;
+  resize: none;
+  font-family: inherit;
+  font-size: inherit;
+  min-height: 4.5em;
+  border: none;
+  border-bottom: 1px solid #000;
+  background: #fff48a;
+  padding: 4px 6px;
+  line-height: 1.5;
+}
+
+.fill-inline {
+  display: inline-block;
+  flex: 0 0 auto;
+  text-align: center;
+}
+
+.dia { width: 4ch; }
+.mes { width: 14ch; }
+.ano { width: 5ch; }
+
+select.fill {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #fff48a;
+  border: none;
+  border-bottom: 1px solid #000;
+  font: inherit;
+  color: #000;
+  padding: 2px 4px 3px;
+  outline: none;
+  cursor: pointer;
+  line-height: 1.5;
+  vertical-align: baseline;
+  height: auto;
+}
+
+select.fill:focus {
+  background: #ffe94d;
+  box-shadow: inset 0 -2px 0 #2563eb;
+}
+
+/* === Data e assinaturas === */
+.data-local {
+  text-align: center;
+  margin: 2rem 0 3rem 0 !important;
+  font-size: 11pt;
+}
+
+.signatures {
+  margin-top: 1.5rem;
+}
+
+.signature-block {
+  margin-bottom: 2rem;
+}
+
+.signature-line {
+  border-top: 1px solid #000;
+  width: 8cm;
+  margin-bottom: 0.2rem;
+}
+
+.signature-block p {
+  margin: 0;
+  font-size: 10.5pt;
+}
+
+/* === Mobile (tela apenas) === */
+@media screen and (max-width: 820px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .page {
+    width: 100%;
+    min-height: auto;
+    margin: 0.5rem 0;
+    padding: 1rem;
+    box-shadow: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .doc-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .title-block h1 {
+    font-size: 16pt;
+  }
+
+  .fields-table,
+  .fields-table tbody,
+  .fields-table tr,
+  .fields-table td {
+    display: block;
+    width: 100% !important;
+  }
+
+  .fields-table td + td {
+    padding-left: 0;
+  }
+
+  .fields-table label {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .fill,
+  .fill-area {
+    width: 100%;
+  }
+
+  .toolbar {
+    flex-wrap: wrap;
+  }
+}
+
+/* === Impressão === */
+@media print {
+  body {
+    background: #fff;
+    margin: 0;
+  }
+
+  .no-print { display: none !important; }
+
+  .page {
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    width: 100%;
+    min-height: auto;
+    page-break-after: auto;
+    break-after: auto;
+    border: none;
+  }
+
+  .page p {
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+
+  /* Mantém centralização nos blocos que devem ficar centralizados */
+  .page .law-box p,
+  .page .title-block p,
+  .page .box-title,
+  .page .section-title,
+  .page .data-local {
+    text-align: center !important;
+  }
+
+  /* Evita que parágrafos / blocos fiquem partidos entre páginas criando vazios */
+  .page p,
+  .resume-box,
+  .law-box,
+  .signature-block,
+  .data-local {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Garante que o textarea do "Objeto" não explode em altura na impressão */
+  .fill-area {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  /* Campos sem destaque amarelo na impressão — apenas o texto preenchido */
+  .fill,
+  .fill-area,
+  select.fill {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #000 !important;
+    box-shadow: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+  }
+
+  /* Opcional: para imprimir com destaque amarelo (para teste visual), use a classe abaixo */
+  body.print-highlight .fill,
+  body.print-highlight .fill-area {
+    background: #fff48a !important;
+  }
+
+  @page {
+    size: A4;
+    margin: 1.5cm 2cm;
+  }
+}

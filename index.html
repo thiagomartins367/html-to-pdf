@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Termo de Adesão ao Serviço Voluntário - CEJR 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="toolbar no-print">
+    <button id="btn-print" type="button" class="btn">Imprimir / Salvar PDF</button>
+    <button onclick="limparCampos()" type="button" class="btn btn-secondary">Limpar campos</button>
+    <span id="form-error" class="form-error" role="alert" aria-live="polite"></span>
+  </div>
+
+  <article class="page">
+    <!-- Cabeçalho -->
+    <header class="doc-header">
+      <div class="logo-box">
+        <img src="logo.png" alt="Centro Espírita Jerônymo Ribeiro" class="logo-img" />
+      </div>
+      <div class="title-block">
+        <h1>CENTRO ESPÍRITA JERÔNYMO RIBEIRO</h1>
+        <p class="subtitle">Rua Batista Fluminense 08, Centro - Cachoeiro de Itapemirim/ES</p>
+        <p class="motto"><em>"O trabalho constante nos dá força permanente"</em></p>
+      </div>
+    </header>
+    <hr class="header-rule" />
+
+    <!-- Box dos títulos das leis -->
+    <section class="law-box">
+      <p><strong>Termo de Adesão ao Serviço Voluntário (Lei nº. 9608)</strong></p>
+      <p><strong>Termo de consentimento para tratamento de dados pessoais (Lei nº 13.709-LGPD)</strong></p>
+      <p><strong>Termo de autorização para pesquisa de antecedentes criminais (Lei nº 14.811)</strong></p>
+    </section>
+
+    <!-- Quadro Resumo -->
+    <section class="resume-box">
+      <h2 class="box-title">QUADRO RESUMO - IDENTIFICAÇÃO DAS PARTES CONTRATANTES</h2>
+
+      <h3>CONTRATANTE / CONTROLADOR DOS DADOS</h3>
+      <p class="italic">
+        CENTRO ESPÍRITA JERÔNYMO RIBEIRO, CNPJ: 27.192.574-0001-65, com sede na Rua Batista Fluminense,
+        nº 8, Centro, Cachoeiro de Itapemirim/ES <strong>, neste ato representado por sua Presidente,</strong>
+        Edimery Pinheiro Quadros.
+      </p>
+
+      <h3>VOLUNTÁRIO / TITULAR DOS DADOS</h3>
+      <table class="fields-table">
+        <tr>
+          <td colspan="2">
+            <label>Nome <input type="text" class="fill" name="nome" required /></label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <label>Nome da Mãe <input type="text" class="fill" name="nome_mae" required /></label>
+          </td>
+        </tr>
+        <tr>
+          <td><label>CPF <input type="text" class="fill" name="cpf" data-mask="cpf" maxlength="14" inputmode="numeric" placeholder="000.000.000-00" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="CPF no formato 000.000.000-00" /></label></td>
+          <td><label>Telefone 55+ <input type="text" class="fill" name="telefone" data-mask="phone" maxlength="15" inputmode="numeric" placeholder="(00) 00000-0000" required pattern="\(\d{2}\) \d{4,5}-\d{4}" title="Telefone no formato (00) 00000-0000" /></label></td>
+        </tr>
+        <tr>
+          <td><label>Email <input type="email" class="fill" name="email" required placeholder="seu@email.com" title="Informe um e-mail válido" /></label></td>
+          <td><label>Data de Nascimento <input type="text" class="fill" name="nascimento" placeholder="dd/mm/aaaa" data-mask="date" maxlength="10" inputmode="numeric" required pattern="\d{2}/\d{2}/\d{4}" title="Data no formato dd/mm/aaaa" /></label></td>
+        </tr>
+      </table>
+    </section>
+
+    <h2 class="section-title">Adesão ao Serviço Voluntário (Lei nº. 9608)</h2>
+
+    <p>
+      Por intermédio do presente TERMO DE ADESÃO, regido pela Lei nº. 9608, de 18/02/98, o VOLUNTÁRIO
+      compromete-se a prestar serviços de natureza voluntária em favor da CONTRATANTE, entidade de fins
+      filantrópicos, que consistirão em:
+    </p>
+
+    <p><strong>01.&nbsp;&nbsp;Objeto</strong>: Pretendo colaborar nas seguintes atividades da CONTRATANTE:</p>
+    <textarea class="fill fill-area" name="objeto" rows="3" required></textarea>
+
+    <p>
+      <strong>02. Condições</strong> – os serviços serão prestados em horários estabelecidos de comum acordo
+      e sem controle de frequência, ficando as partes dispensadas de qualquer pré-aviso formal, que implique
+      em qualquer espécie de indenização em caso de desinteresse na continuidade da relação advinda do
+      presente Termo. O local de prestação pode ser no endereço da CONTRATANTE ou um de seus polos.
+    </p>
+
+    <p>
+      <strong>03. Período</strong>: Período indeterminado, a contar da data de assinatura deste termo (vide
+      item 4 – letra e)
+    </p>
+
+    <p><strong>04. Adesão ao serviço voluntário</strong>. O VOLUNTÁRIO, abaixo assinado, declara que:</p>
+    <p>a) dentro das condições acima estipuladas possui disponibilidade de tempo e capacidade física e
+      emocional para o desempenho das atividades as quais ora se compromete;</p>
+    <p>b) está ciente de que os serviços acima descritos serão prestados de forma voluntária, sem percepção
+      de remuneração, bem como da inexistência de vínculo empregatício, nem obrigação de natureza
+      trabalhista, previdenciária ou afim;</p>
+    <p>c) está ciente de que o ressarcimento de eventuais despesas realizadas em razão do desempenho das
+      atividades, somente será feito se as mesmas forem expressamente autorizadas por escrito, pela
+      entidade beneficiária dos serviços, nos limites desta autorização e mediante prestação de contas;</p>
+  </article>
+
+  <!-- Página 2 -->
+  <article class="page">
+    <p>d) na hipótese de o desempenho das atividades ora compromissadas virem a acarretar danos a
+      terceiros, se decorrentes de dolo ou culpa, manifesta ciência de que poderá ficar sujeito a arcar com os
+      consequentes prejuízos.</p>
+    <p>e) Mantém a validade deste termo de voluntariado por tempo indeterminado. O VOLUNTÁRIO poderá
+      solicitar via e-mail, mensagem por celular ou correspondência ao representante da CONTRATANTE, a
+      qualquer momento, que seja cancelado o termo voluntariado.</p>
+
+    <h2 class="section-title-left">Consentimento para tratamento de dados pessoais (Lei nº 13.709-LGPD)</h2>
+    <p>Este documento visa registrar a manifestação livre, informada e inequívoca pela qual o usuário
+      concorda com o tratamento de seus dados pessoais para finalidade específica, em conformidade com a
+      Lei nº 13.709 – Lei Geral de Proteção de Dados Pessoais (LGPD).</p>
+    <p>Ao aceitar o presente termo, o usuário consente e concorda que a organização contratante definida
+      acima, doravante denominada Controlador, tome decisões referentes ao tratamento de seus dados
+      pessoais, bem como realize o tratamento de seus dados pessoais, envolvendo operações como as que
+      se referem a coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão,
+      distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da
+      informação, modificação, comunicação, transferência, difusão ou extração.</p>
+
+    <p><strong>05. Dados Pessoais:</strong> O Controlador fica autorizado a tomar decisões referentes ao
+      tratamento e a realizar o tratamento dos seguintes dados pessoais do Titular:</p>
+    <p>Nome completo; Número do Cadastro de Pessoas Físicas (CPF); Telefone(s); Endereço; e-mail pessoal;
+      Data de Nascimento; Cessão de direitos de imagens e som capturadas no âmbito dos trabalhos da
+      instituição.</p>
+
+    <p><strong>06. Finalidades do Tratamento dos Dados:</strong> O tratamento dos dados pessoais listados
+      neste termo tem as seguintes finalidades: Possibilitar que o Controlador identifique e entre em contato
+      com o Titular para fins de relacionamento; possibilitar que o Controlador possa dar acesso ao sistema
+      de votação da organização; divulgação de informações e atividades da CONTRATANTE.</p>
+
+    <p><strong>07. Compartilhamento de Dados:</strong> O Controlador fica autorizado a compartilhar os dados
+      pessoais do Titular com a CONTRATANTE para as finalidades listadas neste termo, observados os
+      princípios e as garantias estabelecidas pela Lei nº 13.709.</p>
+
+    <p><strong>08. Segurança dos Dados:</strong> O Controlador responsabiliza-se pela manutenção de
+      medidas de segurança, técnicas e administrativas aptas a proteger os dados pessoais de acessos não
+      autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou
+      qualquer forma de tratamento inadequado ou ilícito. Em conformidade ao art. 48 da Lei nº 13.709, o
+      Controlador comunicará ao Titular e à Autoridade Nacional de Proteção de Dados (ANPD) a ocorrência
+      de incidente de segurança que possa acarretar risco ou dano relevante ao Titular.</p>
+
+    <p><strong>09. Término do Tratamento dos Dados:</strong> O Controlador poderá manter e tratar os
+      dados pessoais do Titular durante todo o período em que os mesmos forem pertinentes ao alcance das
+      finalidades listadas neste termo. Dados pessoais anonimizados, sem possibilidade de associação ao
+      indivíduo, poderão ser mantidos por período indefinido.</p>
+    <p>O Titular poderá solicitar via e-mail ou correspondência ao Controlador, a qualquer momento, que
+      sejam eliminados os dados pessoais não anonimizados do Titular.</p>
+
+    <p><strong>10. Direitos do Titular:</strong> O Titular tem direito a obter do Controlador, em relação aos
+      dados por ele tratados, a qualquer momento e mediante requisição: I - confirmação da existência de
+      tratamento; II - acesso aos dados; III - correção de dados incompletos, inexatos ou desatualizados;
+      IV - anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em
+      desconformidade com o disposto na Lei nº 13.709; V - portabilidade dos dados a outro fornecedor de
+      serviço ou produto, mediante requisição</p>
+  </article>
+
+  <!-- Página 3 -->
+  <article class="page">
+    <p>expressa, de acordo com a regulamentação da autoridade nacional, observados os segredos comercial
+      e industrial; VI - eliminação dos dados pessoais tratados com o consentimento do titular, exceto nas
+      hipóteses previstas no art. 16 da Lei nº 13.709; VII - informação das entidades públicas e privadas com
+      as quais o controlador realizou uso compartilhado de dados; VIII - informação sobre a possibilidade de
+      não fornecer consentimento e sobre as consequências da negativa; IX - revogação do consentimento,
+      nos termos do § 5º do art. 8º da Lei nº 13.709.</p>
+
+    <p><strong>11. Direito de Revogação do Consentimento:</strong> Este consentimento poderá ser revogado
+      pelo usuário, a qualquer momento, mediante solicitação via e-mail ou correspondência ao Controlador.</p>
+
+    <p><strong>12. Autorização para Emissão de Atestado de Bons Antecedentes:</strong> Autorizo a
+      CONTRATANTE a solicitar a emissão de atestado de bons antecedentes em meu nome, conforme exigido
+      pela Lei nº 14.811, de 12 de janeiro de 2024, para atender aos requisitos estabelecidos para a
+      realização do serviço voluntário.</p>
+
+    <p class="data-local">
+      Cachoeiro de Itapemirim/ ES,
+      <input type="text" class="fill fill-inline dia" name="dia" placeholder="dia" data-mask="digits" maxlength="2" inputmode="numeric" required pattern="\d{1,2}" title="Dia (1-31)" />
+      de
+      <select class="fill fill-inline mes" name="mes" required
+              oninvalid="this.setCustomValidity('Selecione um mês')"
+              onchange="this.setCustomValidity('')">
+        <option value="" disabled selected>mês</option>
+        <option>janeiro</option>
+        <option>fevereiro</option>
+        <option>março</option>
+        <option>abril</option>
+        <option>maio</option>
+        <option>junho</option>
+        <option>julho</option>
+        <option>agosto</option>
+        <option>setembro</option>
+        <option>outubro</option>
+        <option>novembro</option>
+        <option>dezembro</option>
+      </select>
+      de
+      <input type="text" class="fill fill-inline ano" name="ano" placeholder="ano" data-mask="digits" maxlength="4" inputmode="numeric" required pattern="\d{4}" title="Ano com 4 dígitos" />
+    </p>
+
+    <div class="signatures">
+      <div class="signature-block">
+        <div class="signature-line"></div>
+        <p>Assinatura do(a) VOLUNTÁRIO / TITULAR</p>
+      </div>
+      <div class="signature-block">
+        <div class="signature-line"></div>
+        <p>Testemunha</p>
+      </div>
+      <div class="signature-block">
+        <div class="signature-line"></div>
+        <p>Assinatura do(a) representante da<br />CONTRATANTE/ CONTROLADOR DE DADOS</p>
+      </div>
+    </div>
+  </article>
+
+  <script>
+    function limparCampos() {
+      document.querySelectorAll('input.fill, textarea.fill').forEach(el => el.value = '');
+      document.querySelectorAll('select.fill').forEach(el => el.selectedIndex = 0);
+    }
+
+    const masks = {
+      date: (v) => {
+        const d = v.replace(/\D/g, '').slice(0, 8);
+        if (d.length <= 2) return d;
+        if (d.length <= 4) return `${d.slice(0,2)}/${d.slice(2)}`;
+        return `${d.slice(0,2)}/${d.slice(2,4)}/${d.slice(4)}`;
+      },
+      cpf: (v) => {
+        const d = v.replace(/\D/g, '').slice(0, 11);
+        if (d.length <= 3) return d;
+        if (d.length <= 6) return `${d.slice(0,3)}.${d.slice(3)}`;
+        if (d.length <= 9) return `${d.slice(0,3)}.${d.slice(3,6)}.${d.slice(6)}`;
+        return `${d.slice(0,3)}.${d.slice(3,6)}.${d.slice(6,9)}-${d.slice(9)}`;
+      },
+      letters: (v) => v.replace(/[^A-Za-zÇçÀ-ÖØ-öø-ÿ\s]/g, ''),
+      digits: (v) => v.replace(/\D/g, ''),
+      phone: (v) => {
+        const d = v.replace(/\D/g, '').slice(0, 11);
+        if (d.length <= 2) return d.length ? `(${d}` : d;
+        if (d.length <= 6) return `(${d.slice(0,2)}) ${d.slice(2)}`;
+        if (d.length <= 10) return `(${d.slice(0,2)}) ${d.slice(2,6)}-${d.slice(6)}`;
+        return `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}`;
+      },
+    };
+
+    document.querySelectorAll('input[data-mask]').forEach((el) => {
+      const fn = masks[el.dataset.mask];
+      if (!fn) return;
+      el.addEventListener('input', () => {
+        el.value = fn(el.value);
+      });
+    });
+
+    // Validação antes de imprimir
+    const btnPrint = document.getElementById('btn-print');
+    const errorEl = document.getElementById('form-error');
+
+    btnPrint.addEventListener('click', () => {
+      const fields = document.querySelectorAll('.fill');
+      let firstInvalid = null;
+      fields.forEach((f) => {
+        f.classList.remove('invalid');
+        if (!f.checkValidity()) {
+          f.classList.add('invalid');
+          if (!firstInvalid) firstInvalid = f;
+        }
+      });
+
+      if (firstInvalid) {
+        errorEl.textContent = '*Preencha todos os campos corretamente!';
+        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        firstInvalid.focus({ preventScroll: true });
+        firstInvalid.reportValidity();
+        return;
+      }
+
+      errorEl.textContent = '';
+      window.print();
+    });
+
+    // Remove marcação de erro quando o usuário corrige
+    document.querySelectorAll('.fill').forEach((el) => {
+      el.addEventListener('input', () => el.classList.remove('invalid'));
+      el.addEventListener('change', () => el.classList.remove('invalid'));
+    });
+  </script>
+</body>
+</html>
