@@ -279,11 +279,15 @@ select.fill:focus {
 }
 
 .signatures {
-  margin-top: 1.5rem;
+  margin-top: 3.5cm;
 }
 
 .signature-block {
-  margin-bottom: 2rem;
+  margin-bottom: 3.5cm;
+}
+
+.signature-block:last-child {
+  margin-bottom: 0;
 }
 
 .signature-line {

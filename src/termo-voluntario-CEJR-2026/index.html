@@ -20,10 +20,10 @@
     <!-- Cabeçalho -->
     <header class="doc-header">
       <div class="logo-box">
-        <img src="logo.png" alt="Centro Espírita Jerônymo Ribeiro" class="logo-img" />
+        <img src="logo.png" alt="Centro Espírita Jeronymo Ribeiro" class="logo-img" />
       </div>
       <div class="title-block">
-        <h1>CENTRO ESPÍRITA JERÔNYMO RIBEIRO</h1>
+        <h1>CENTRO ESPÍRITA JERONYMO RIBEIRO</h1>
         <p class="subtitle">Rua Batista Fluminense 08, Centro - Cachoeiro de Itapemirim/ES</p>
         <p class="motto"><em>"O trabalho constante nos dá força permanente"</em></p>
       </div>
@@ -43,7 +43,7 @@
 
       <h3>CONTRATANTE / CONTROLADOR DOS DADOS</h3>
       <p class="italic">
-        CENTRO ESPÍRITA JERÔNYMO RIBEIRO, CNPJ: 27.192.574-0001-65, com sede na Rua Batista Fluminense,
+        CENTRO ESPÍRITA JERONYMO RIBEIRO, CNPJ: 27.192.574-0001-65, com sede na Rua Batista Fluminense,
         nº 8, Centro, Cachoeiro de Itapemirim/ES <strong>, neste ato representado por sua Presidente,</strong>
         Edimery Pinheiro Quadros.
       </p>
@@ -181,7 +181,12 @@
 
     <p class="data-local">
       Cachoeiro de Itapemirim/ ES,
-      <input type="text" class="fill fill-inline dia" name="dia" placeholder="dia" data-mask="digits" maxlength="2" inputmode="numeric" required pattern="\d{1,2}" title="Dia (1-31)" />
+      <select class="fill fill-inline dia" name="dia" required
+              oninvalid="this.setCustomValidity('Selecione um dia')"
+              onchange="this.setCustomValidity('')">
+        <option value="" disabled selected>dia</option>
+        <script>for(let i=1;i<=31;i++)document.write(`<option>${i}</option>`)</script>
+      </select>
       de
       <select class="fill fill-inline mes" name="mes" required
               oninvalid="this.setCustomValidity('Selecione um mês')"
@@ -201,7 +206,12 @@
         <option>dezembro</option>
       </select>
       de
-      <input type="text" class="fill fill-inline ano" name="ano" placeholder="ano" data-mask="digits" maxlength="4" inputmode="numeric" required pattern="\d{4}" title="Ano com 4 dígitos" />
+      <select class="fill fill-inline ano" name="ano" required
+              oninvalid="this.setCustomValidity('Selecione um ano')"
+              onchange="this.setCustomValidity('')">
+        <option value="" disabled selected>ano</option>
+        <script>for(let i=2026;i<=2030;i++)document.write(`<option>${i}</option>`)</script>
+      </select>
     </p>
 
     <div class="signatures">
@@ -258,6 +268,27 @@
         el.value = fn(el.value);
       });
     });
+
+    // Pré-preenche dia/mês/ano com a data atual (se o ano estiver dentro do range disponível)
+    (function preencherDataAtual() {
+      const hoje = new Date();
+      const dia = String(hoje.getDate());
+      const meses = ['janeiro','fevereiro','março','abril','maio','junho',
+                     'julho','agosto','setembro','outubro','novembro','dezembro'];
+      const mes = meses[hoje.getMonth()];
+      const ano = String(hoje.getFullYear());
+
+      const setIf = (sel, val) => {
+        const el = document.querySelector(sel);
+        if (!el) return;
+        const opt = Array.from(el.options).find((o) => o.value === val || o.textContent === val);
+        if (opt) el.value = opt.value || opt.textContent;
+      };
+
+      setIf('select[name="dia"]', dia);
+      setIf('select[name="mes"]', mes);
+      setIf('select[name="ano"]', ano);
+    })();
 
     // Validação antes de imprimir
     const btnPrint = document.getElementById('btn-print');
