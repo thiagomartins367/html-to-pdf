@@ -43,7 +43,7 @@
 
       <h3>CONTRATANTE / CONTROLADOR DOS DADOS</h3>
       <p class="italic">
-        CENTRO ESPÍRITA JERONYMO RIBEIRO, CNPJ: 27.192.574-0001-65, com sede na Rua Batista Fluminense,
+        CENTRO ESPIRITA JERONIMO RIBEIRO, CNPJ: 27.192.574-0001-65, com sede na Rua Batista Fluminense,
         nº 8, Centro, Cachoeiro de Itapemirim/ES <strong>, neste ato representado por sua Presidente,</strong>
         Edimery Pinheiro Quadros.
       </p>
@@ -52,17 +52,17 @@
       <table class="fields-table">
         <tr>
           <td colspan="2">
-            <label>Nome <input type="text" class="fill" name="nome" required /></label>
+            <label>Nome Completo <input type="text" class="fill" name="nome" required data-uppercase /></label>
           </td>
         </tr>
         <tr>
           <td colspan="2">
-            <label>Nome da Mãe <input type="text" class="fill" name="nome_mae" required /></label>
+            <label>Nome da Mãe <input type="text" class="fill" name="nome_mae" required data-uppercase /></label>
           </td>
         </tr>
         <tr>
           <td><label>CPF <input type="text" class="fill" name="cpf" data-mask="cpf" maxlength="14" inputmode="numeric" placeholder="000.000.000-00" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="CPF no formato 000.000.000-00" /></label></td>
-          <td><label>Telefone 55+ <input type="text" class="fill" name="telefone" data-mask="phone" maxlength="15" inputmode="numeric" placeholder="(00) 00000-0000" required pattern="\(\d{2}\) \d{4,5}-\d{4}" title="Telefone no formato (00) 00000-0000" /></label></td>
+          <td><label>Telefone +55 <input type="text" class="fill" name="telefone" data-mask="phone" maxlength="15" inputmode="numeric" placeholder="(00) 00000-0000" required pattern="\(\d{2}\) \d{4,5}-\d{4}" title="Telefone no formato (00) 00000-0000" /></label></td>
         </tr>
         <tr>
           <td><label>Email <input type="email" class="fill" name="email" required placeholder="seu@email.com" title="Informe um e-mail válido" /></label></td>
@@ -270,6 +270,15 @@
       if (!fn) return;
       el.addEventListener('input', () => {
         el.value = fn(el.value);
+      });
+    });
+
+    document.querySelectorAll('input[data-uppercase]').forEach((el) => {
+      el.style.textTransform = 'uppercase';
+      el.addEventListener('input', () => {
+        const pos = el.selectionStart;
+        el.value = el.value.toUpperCase();
+        el.setSelectionRange(pos, pos);
       });
     });
 
