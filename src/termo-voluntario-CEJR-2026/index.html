@@ -234,6 +234,10 @@
     function limparCampos() {
       document.querySelectorAll('input.fill, textarea.fill').forEach(el => el.value = '');
       document.querySelectorAll('select.fill').forEach(el => el.selectedIndex = 0);
+      preencherDataAtual();
+      document.querySelectorAll('.fill').forEach(el => el.classList.remove('invalid'));
+      const err = document.getElementById('form-error');
+      if (err) err.textContent = '';
     }
 
     const masks = {
@@ -269,8 +273,8 @@
       });
     });
 
-    // Pré-preenche dia/mês/ano com a data atual (se o ano estiver dentro do range disponível)
-    (function preencherDataAtual() {
+    // Pré-preenche dia/mês com a data atual; ano só se estiver no range do select
+    function preencherDataAtual() {
       const hoje = new Date();
       const dia = String(hoje.getDate());
       const meses = ['janeiro','fevereiro','março','abril','maio','junho',
@@ -282,13 +286,19 @@
         const el = document.querySelector(sel);
         if (!el) return;
         const opt = Array.from(el.options).find((o) => o.value === val || o.textContent === val);
-        if (opt) el.value = opt.value || opt.textContent;
+        if (opt) {
+          el.value = opt.value || opt.textContent;
+        } else {
+          el.selectedIndex = 0;
+        }
       };
 
       setIf('select[name="dia"]', dia);
       setIf('select[name="mes"]', mes);
       setIf('select[name="ano"]', ano);
-    })();
+    }
+
+    preencherDataAtual();
 
     // Validação antes de imprimir
     const btnPrint = document.getElementById('btn-print');
